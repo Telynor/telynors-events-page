@@ -2,7 +2,7 @@
   "id": "telynors-events-page",
   "title": "Telynor's Events Page",
   "description": "Star Rail event browser, designer, individual player progress, rewards and programmable events.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "authors": [
     {
       "name": "Telynor"
@@ -37,5 +37,5 @@
   },
   "url": "https://github.com/Telynor/telynors-events-page",
   "manifest": "https://raw.githubusercontent.com/Telynor/telynors-events-page/main/manifest.json",
-  "download": "https://github.com/Telynor/telynors-events-page/releases/download/v0.1.0/telynors-events-page.zip"
+  "download": "https://raw.githubusercontent.com/Telynor/telynors-events-page/main/releases/telynors-events-page-v0.2.0.zip"
 }

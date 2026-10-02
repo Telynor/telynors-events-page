@@ -53,7 +53,7 @@ async function process(user,packet){
    const item=e.items.find(i=>i.id===packet.itemId);if(!item)throw Error('Objective not found.');if(!unlocked(e,item,p))throw Error('Finish prerequisites first.');await award(db,e,user,item);
   }else if(packet.op==='custom'){
    const def=await loadScript(e);if(!def?.action)throw Error('Event plugin has no action handler.');
-   await def.action({event:clone(e),progress:clone(p),user,action:String(packet.data.action||''),data:clone(packet.data.payload??{}),context:{setProgress:(itemId,value)=>{const i=e.items.find(x=>x.id===itemId);if(!i)throw Error('Unknown objective.');integer(value);if(!unlocked(e,i,p))throw Error('Prerequisites incomplete.');p.items[itemId]={...(p.items[itemId]??{}),value,complete:value>=i.target};}}});await game.settings.set(ID,'database',db);
+   await def.action({event:clone(e),progress:clone(p),user,action:String(packet.data.action||''),data:clone(packet.data.payload??{}),context:{requestId:packet.id,setProgress:(itemId,value)=>{const i=e.items.find(x=>x.id===itemId);if(!i)throw Error('Unknown objective.');integer(value);if(!unlocked(e,i,p))throw Error('Prerequisites incomplete.');p.items[itemId]={...(p.items[itemId]??{}),value,complete:value>=i.target};}}});await game.settings.set(ID,'database',db);
   }else throw Error('Unknown event request.');
   db.receipts[packet.id]={ok:true};
  }catch(error){console.error(ID,error);db=database();db.receipts[packet.id]={ok:false,error:error.message};}

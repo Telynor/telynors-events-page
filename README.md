@@ -1,4 +1,4 @@
-# Telynor's Events Page — 0.1.0 beta
+# Telynor's Events Page — 0.2.0 beta
 
 Targets Foundry VTT 14 and D&D 5e 5.3.3. Built against the supplied Ultimates 3.13.18 and Planar Ornaments 1.0.5 packages. This is a first beta: automated logic and template-generation checks pass; a running Foundry world and browser layout verification were not available.
 
@@ -74,8 +74,12 @@ For a custom loot system, call `await TelyEvents.modifyPlanarDrops(baseEntries, 
 
 ## Validation
 
-The repository includes source and 10 automated tests. Tests cover priority order, separate check-ins, DST/reset boundaries, active/eligible drop bonuses, invalid prerequisites, skipped incomplete awards, reward recovery after simulated disconnection, repeated check-ins, unique extra drops and player write rejection. Syntax checks pass for all module and example files. Template output was generated for the browser, check-in page, designer and master. Live Foundry permissions, hook order, FilePicker uploads, phone positioning and responsive layouts still need an in-world smoke test.
+The repository includes source and 20 automated tests. Tests cover priority order, separate check-ins, DST/reset boundaries, active/eligible drop bonuses, invalid prerequisites, skipped incomplete awards, reward recovery after simulated disconnection, repeated check-ins, unique extra drops and player write rejection. Syntax checks pass for all module and example files. Template output was generated for the browser, check-in page, designer and master. Live Foundry permissions, hook order, FilePicker uploads, phone positioning and responsive layouts still need an in-world smoke test.
 
 ## Foundry manifest
 
 Install using `https://raw.githubusercontent.com/Telynor/telynors-events-page/main/manifest.json` after the repository and release have been published.
+
+## Multiplayer board game
+
+Bundled uploadable plugin: `events/multiplayer-board-game.js`. Set plugin registration ID to `multiplayer-board-game`. Full setup and rules: [BOARD-GAME-SETUP.md](events/BOARD-GAME-SETUP.md). Version 0.2.0 preloads event scripts on connected clients and gives plugin actions a stable request ID for transaction recovery.
