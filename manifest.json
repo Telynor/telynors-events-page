@@ -1,0 +1,41 @@
+{
+  "id": "telynors-events-page",
+  "title": "Telynor's Events Page",
+  "description": "Star Rail event browser, designer, individual player progress, rewards and programmable events.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Telynor"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/events.css"
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.3.3"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "telys-star-rail-ultimates",
+        "type": "module"
+      }
+    ]
+  },
+  "url": "https://github.com/Telynor/telynors-events-page",
+  "manifest": "https://raw.githubusercontent.com/Telynor/telynors-events-page/main/manifest.json",
+  "download": "https://github.com/Telynor/telynors-events-page/releases/download/v0.1.0/telynors-events-page.zip"
+}
